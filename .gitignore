@@ -2,5 +2,7 @@
 result
 result-*
 
+*.iso
+
 # Ignore automatically generated direnv output
 .direnv

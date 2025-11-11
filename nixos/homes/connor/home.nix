@@ -9,6 +9,9 @@
     ncspot
     waypaper
     hyprpaper
+    hyprcursor
+    rose-pine-hyprcursor
+    hy
     nerd-fonts.jetbrains-mono
   ];
   

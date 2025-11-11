@@ -15,9 +15,9 @@
   # Autostart necessary processes (like notifications daemons, status bars, etc.)
   # Or execute your favorite apps at launch like this:
   
-  exec-once = vicinae server
-  exec-once = hyprpanel
-  exec-once = waypaper --restore
+  exec-once = uwsm app -- vicinae server
+  exec-once = uwsm app -- hyprpanel
+  exec-once = uwsm app -- waypaper --restore
   
   #############################
   ### ENVIRONMENT VARIABLES ###
@@ -169,6 +169,8 @@
 
       touchpad {
         natural_scroll = true
+	clickfinger_behavior = true;
+	disable_while_typing = false;
       }
   }
   
@@ -187,14 +189,14 @@
   ###################
   
   # Example binds, see https://wiki.hypr.land/Configuring/Binds/ for more
-  bind = $mod, T, exec, $terminal
+  bind = $mod, T, exec, uwsm app -- $terminal
   bind = $mod, Q, killactive,
   bind = $mod, M, exit,
-  bind = $mod, E, exec, $fileManager
+  bind = $mod, E, exec, uwsm app -- $fileManager
   bind = $mod, V, togglefloating,
-  bind = $mod, SPACE, exec, $menu
+  bind = $mod, SPACE, exec, uwsm app -- $menu
   bind = $mod, F, fullscreen
-  bind = $mod, B, exec, $browser
+  bind = $mod, B, exec, uwsm app -- $browser
   
   # Move focus with mainMod + arrow keys
   bind = $mod, left, movefocus, l

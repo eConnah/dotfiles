@@ -47,7 +47,7 @@
 	set state (cat /sys/class/power_supply/macsmc-battery/status)
 	set iconKey "$state$charge"
 	echo "{ 
-	\"charge\": \"$charge\",
+	\"charge\": \"$realCharge\",
 	\"state\": \"$state\",
 	\"alt\": \"$iconKey\" 
 }"
@@ -62,7 +62,10 @@
   };
 
   home.sessionVariables.NIXOS_OZONE_WL = "1";
-  wayland.windowManager.hyprland.extraConfig = import ./hyprland.nix;
+  wayland.windowManager.hyprland = {
+    extraConfig = import ./hyprland.nix; 
+    systemd.enable = false;
+  };
   programs.hyprpanel = import ./hyprpanel.nix;
   home.file.".config/hyprpanel/modules.json".text = ''
   {

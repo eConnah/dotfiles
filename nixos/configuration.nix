@@ -24,6 +24,7 @@
   boot.extraModprobeConfig = ''
     options hid_apple iso_layout=0
   '';
+
  # boot.kernelParams = [
   #  "zswap.enabled=1"
    # "zswap.compressor=lz4"
@@ -128,11 +129,27 @@
   nixpkgs.config.allowUnfree = true;
 
   # Setup deeper? packages
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+    xwayland.enable = true;
+  };
+  
+  programs.uwsm = {
+    enable = true;
+    waylandCompositors = {
+      hyprland = {
+        prettyName = "Hyprland";
+        comment = "Hyprland compositor managed by UWSM";
+        binPath = "/run/current-system/sw/bin/Hyprland";
+      };
+    };
+  };
+
   programs.gamemode.enable = true;
   programs.firefox.enable = true;
   programs.neovim.enable = true;
   programs.git.enable = true;
-  programs.hyprland.enable = true;
   programs.fish.enable = true;
 
   # List packages installed in system profile.

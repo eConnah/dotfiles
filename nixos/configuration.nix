@@ -125,6 +125,7 @@
   services.displayManager = {
     sddm.enable = true;
     sddm.wayland.enable = true;
+    sddm.theme = "catppuccin-mocha-mauve";
     autoLogin.enable = true;
     autoLogin.user = "connor";
   };
@@ -167,6 +168,12 @@
     kitty
     usbutils
     gh
+    (catppuccin-sddm.override {
+      flavor = "mocha";
+      accent = "mauve";
+      font  = "Noto Sans";
+      fontSize = "9";
+    })
   ];
 
   home-manager.users.connor = import ./homes/connor/home.nix;

@@ -30,6 +30,7 @@
   };
   boot.loader.efi.canTouchEfiVariables = false;
   boot.initrd.systemd.enable = true;
+  boot.kernelParams = [ "nowatchdog" ];
   boot.extraModprobeConfig = ''
     options hid_apple iso_layout=0
   '';

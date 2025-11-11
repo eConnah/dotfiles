@@ -1,6 +1,7 @@
 {
   enable = true;
   settings = {
+    menus.dashboard.powermenu.avatar.image = "/home/connor/Pictures/profilePic.jpg";
     theme = {
       font = {
         name = "JetBrainsMono Nerd Font";

@@ -16,9 +16,18 @@
       <home-manager/nixos>
     ];
   
-  # hardware.asahi.extractPeripheralFirmware = false;
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.limine = {
+    enable = true;
+    extraConfig = ''
+      term_palette: 1e1e2e;f38ba8;a6e3a1;f9e2af;89b4fa;f5c2e7;94e2d5;cdd6f4
+      term_palette_bright: 585b70;f38ba8;a6e3a1;f9e2af;89b4fa;f5c2e7;94e2d5;cdd6f4
+      term_background: 1e1e2e
+      term_foreground: cdd6f4
+      term_background_bright: 585b70
+      term_foreground_bright: cdd6f4
+    '';
+    style.wallpapers = [ ];
+  };
   boot.loader.efi.canTouchEfiVariables = false;
   boot.initrd.systemd.enable = true;
   boot.extraModprobeConfig = ''
@@ -72,8 +81,6 @@
   # services.printing.enable = true;
 
   # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
   services.pipewire = {
   	enable = true;
   	pulse.enable = true;

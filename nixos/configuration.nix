@@ -52,6 +52,9 @@
   nix.settings.auto-optimise-store = true;
   
   networking.hostName = "le-nix"; # Define your hostname.
+  
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
@@ -106,9 +109,6 @@
     };
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.connor = {
     isNormalUser = true;
@@ -131,7 +131,9 @@
     autoLogin.user = "connor";
   };
   
+  services.blueman.enable = true;
   services.gnome.gnome-keyring.enable = true;
+  services.libinput.enable = true;
   services.flatpak.enable = true;
   services.openssh.enable = true;
 

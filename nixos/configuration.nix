@@ -35,17 +35,27 @@
   '';
 
   boot.kernelParams = [
-   # "zswap.enabled=1"
-    #"zswap.compressor=lz4"
-  #  "zswap.max_pool_percent=20"
-   # "zswap.shrinker_enabled=1"
+    "zswap.enabled=1"
+    "zswap.compressor=lz4"
+    "zswap.max_pool_percent=20"
+    "zswap.shrinker_enabled=1"
     "nowatchdog"
+    "resume_offset=2667167"
   ];
 
-  #swapDevices = [{
-   # device = "/swap/swapfile";
-    #size = 10*1024;
-  #}];
+  boot.resumeDevice = "/dev/nvme0n1p5";
+  powerManagement.enable = true;
+
+  swapDevices = [ { device = "/swap/swapfile"; } ];
+  
+  fileSystems = {
+    "/".options = [ "compress=zstd" ];
+    "/home".options = [ "compress=zstd" ];
+    "/nix".options = [ "compress=zstd" "noatime" ];
+    "/swap".options = [ "noatime" ];
+    "/var/log".options = [ "compress=zstd" ];
+    "/var/cache".options = [ "noatime" ];
+  };
 
   # Allow macos system
   nixpkgs.config.allowUnsupportedSystem = true;
@@ -131,7 +141,7 @@
     autoLogin.user = "connor";
   };
   
-  services.blueman.enable = true;
+  services.power-profiles-daemon.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.libinput.enable = true;
   services.flatpak.enable = true;
@@ -173,6 +183,7 @@
     usbutils
     gh
     brightnessctl
+    e2fsprogs
     (catppuccin-sddm.override {
       flavor = "mocha";
       accent = "mauve";

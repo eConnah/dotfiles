@@ -51,6 +51,9 @@
   nixpkgs.config.allowUnsupportedSystem = true;
   nix.settings.auto-optimise-store = true;
   
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
+
   networking.hostName = "escapepod3"; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.
@@ -106,9 +109,6 @@
     };
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.leo = {
     isNormalUser = true;
@@ -131,7 +131,9 @@
     autoLogin.user = "leo";
   };
   
+  services.blueman.enable = true;
   services.gnome.gnome-keyring.enable = true;
+  services.libinput.enable = true;
   services.flatpak.enable = true;
   services.openssh.enable = true;
 

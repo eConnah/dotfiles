@@ -1,6 +1,7 @@
 # Home Manger Setup For Connor
 { pkgs, ... }: {
 
+  nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [ 
     atool
     httpie
@@ -13,6 +14,7 @@
     rose-pine-hyprcursor
     hy
     nerd-fonts.jetbrains-mono
+    vscode
   ];
   
   programs.kitty.enable = true;
@@ -64,7 +66,7 @@
       '';
     };
   };
-
+  
   wayland.windowManager.hyprland = {
     enable = true;
     package = null;

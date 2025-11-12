@@ -34,13 +34,13 @@
 	end
 
 	if test $upgrade -eq 0 -a $trace -eq 0
-	  sudo nixos-rebuild switch -I nixos-config=/home/connor/Documents/dotfiles/nixos/configuration.nix
+	  sudo nixos-rebuild switch -I nixos-config=/home/leo/Documents/dotfiles/nixos/configuration.nix
 	else if test $upgrade -eq 1 -a $trace -eq 0
-	  sudo nixos-rebuild switch -I nixos-config=/home/connor/Documents/dotfiles/nixos/configuration.nix --upgrade
+	  sudo nixos-rebuild switch -I nixos-config=/home/leo/Documents/dotfiles/nixos/configuration.nix --upgrade
 	else if test $upgrade -eq 0 -a $trace -eq 1
-	  sudo nixos-rebuild switch -I nixos-config=/home/connor/Documents/dotfiles/nixos/configuration.nix --show-trace
+	  sudo nixos-rebuild switch -I nixos-config=/home/leo/Documents/dotfiles/nixos/configuration.nix --show-trace
 	else if test $upgrade -eq 1 -a $trace -eq 1
-	  sudo nixos-rebuild switch -I nixos-config=/home/connor/Documents/dotfiles/nixos/configuration.nix --upgrade --show-trace
+	  sudo nixos-rebuild switch -I nixos-config=/home/leo/Documents/dotfiles/nixos/configuration.nix --upgrade --show-trace
 	end
       '';
 

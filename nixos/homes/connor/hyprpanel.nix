@@ -27,12 +27,19 @@
       worldclock.formatDiffDate = "%a %b %d %H:%M:%S %Z";
       worldclock.tz = [ "Europe/Amsterdam" "Europe/London" ];
     };
-    bar.layouts = {
-      "*" = {
-        "left" = [ "dashboard" "workspaces" "windowtitle" ];
-	"middle" = [ "media" ];
-	"right" = [ "volume" "network" "bluetooth" "custom/mac-battery" "clock" "notifications" ];
+    bar = {
+      layouts = {
+        "*" = {
+          "left" = [ "dashboard" "workspaces" "windowtitle" ];
+	  "middle" = [ "media" ];
+	  "right" = [ "volume" "network" "bluetooth" "custom/mac-battery" "clock" "notifications" ];
+        };
       };
+      network = {
+        showWifiInfo = true;
+	truncation = false;
+      };
+      launcher.autoDetectIcon = true;
     };
     scalingPriority = "hyprland";
   };

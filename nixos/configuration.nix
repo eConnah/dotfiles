@@ -51,13 +51,13 @@
   nixpkgs.config.allowUnsupportedSystem = true;
   nix.settings.auto-optimise-store = true;
   
-  networking.hostName = "le-nix"; # Define your hostname.
+  networking.hostName = "escapepod3"; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  time.timeZone = "Europe/Amsterdam";
+  time.timeZone = "Europe/London";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -110,9 +110,9 @@
   services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.connor = {
+  users.users.leo = {
     isNormalUser = true;
-    description = "Connor Alecks";
+    description = "Leo Chittock";
     shell = pkgs.fish;
     extraGroups = [ "wheel" "networkmanager" ];
   };
@@ -128,7 +128,7 @@
     sddm.wayland.enable = true;
     sddm.theme = "catppuccin-mocha-mauve";
     autoLogin.enable = true;
-    autoLogin.user = "connor";
+    autoLogin.user = "leo";
   };
   
   services.flatpak.enable = true;

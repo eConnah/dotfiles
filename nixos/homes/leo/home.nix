@@ -1,4 +1,4 @@
-# Home Manger Setup For Connor
+# Home Manger Setup For Leo
 { pkgs, ... }: {
 
   home.packages = with pkgs; [ 

@@ -178,7 +178,7 @@
     })
   ];
 
-  home-manager.users.connor = import ./homes/connor/home.nix;
+  home-manager.users.connor = import ./homes/leo/home.nix;
   
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

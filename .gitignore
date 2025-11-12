@@ -2,6 +2,8 @@
 result
 result-*
 
+nixos/hardware-configuration.nix
+
 *.iso
 
 # Ignore automatically generated direnv output

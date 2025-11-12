@@ -15,7 +15,7 @@
   # Autostart necessary processes (like notifications daemons, status bars, etc.)
   # Or execute your favorite apps at launch like this:
   
-  exec-once = USE_LAYER_SHELL=0 vicinae server
+  exec-once = uwsm app -- vicinae server
   exec-once = uwsm app -- hyprpanel
   exec-once = uwsm app -- waypaper --restore
   
@@ -164,7 +164,7 @@
   
   # https://wiki.hypr.land/Configuring/Variables/#input
   input {
-      sensitivity = 0.5;
+      sensitivity = 0.3;
       follow_mouse = 1
 
       touchpad {

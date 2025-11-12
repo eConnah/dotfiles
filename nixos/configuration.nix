@@ -30,22 +30,22 @@
   };
   boot.loader.efi.canTouchEfiVariables = false;
   boot.initrd.systemd.enable = true;
-  boot.kernelParams = [ "nowatchdog" ];
   boot.extraModprobeConfig = ''
     options hid_apple iso_layout=0
   '';
 
- # boot.kernelParams = [
-  #  "zswap.enabled=1"
-   # "zswap.compressor=lz4"
-    #"zswap.max_pool_percent=20"
+  boot.kernelParams = [
+   # "zswap.enabled=1"
+    #"zswap.compressor=lz4"
+  #  "zswap.max_pool_percent=20"
    # "zswap.shrinker_enabled=1"
- # ];
+    "nowatchdog"
+  ];
 
   #swapDevices = [{
-   # device = "/var/lib/swapfile";
-   # size = 10*1024;
- # }];
+   # device = "/swap/swapfile";
+    #size = 10*1024;
+  #}];
 
   # Allow macos system
   nixpkgs.config.allowUnsupportedSystem = true;
@@ -169,6 +169,7 @@
     kitty
     usbutils
     gh
+    brightnessctl
     (catppuccin-sddm.override {
       flavor = "mocha";
       accent = "mauve";

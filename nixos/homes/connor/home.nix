@@ -55,6 +55,13 @@
 	\"alt\": \"$iconKey\" 
 }"
       '';
+
+      ifdischarging = ''
+        set state (cat /sys/class/power_supply/macsmc-battery/status)
+        if test "$state" = "Discharging"
+	  eval $argv
+	end
+      '';
     };
   };
 
@@ -69,7 +76,37 @@
     extraConfig = import ./hyprland.nix; 
     systemd.enable = false;
   };
+  services.hypridle.enable = true;
   programs.hyprpanel = import ./hyprpanel.nix;
+  home.file.".config/hypr/hypridle.conf".text = ''
+  general {
+    after_sleep_cmd = hyprctl dispatch dpms on # to avoid having to press a key twice to turn on the display.
+  }
+
+  listener {
+    timeout = 150                                                # 2.5min.
+    on-timeout = fish -c (ifdischarging (brightnessctl -s set 10)) # set monitor backlight to minimum, avoid 0 on OLED monitor.
+    on-resume = brightnessctl -r                                 # monitor backlight restore.
+  }
+
+  # turn off keyboard backlight, comment out this section if you dont have a keyboard backlight.
+  listener { 
+    timeout = 150                                                              # 2.5min.
+    on-timeout = fish -c (ifdischarging (brightnessctl -sd kbd_backlight set 0)) # turn off keyboard backlight.
+    on-resume = brightnessctl -rd kbd_backlight                                # turn on keyboard backlight.
+  }
+
+  listener {
+    timeout = 330                                                  # 5.5min
+    on-timeout = fish -c (ifdischarging (hyprctl dispatch dpms off)) # screen off when timeout has passed
+    on-resume = hyprctl dispatch dpms on && brightnessctl -r       # screen on when activity is detected after timeout has fired.
+  }
+
+  listener {
+    timeout = 1800                                         # 30min
+    on-timeout = fish -c (ifdischarging (systemctl suspend)) # suspend pc
+  }
+  '';
   home.file.".config/hyprpanel/modules.json".text = ''
   {
     "custom/mac-battery": {

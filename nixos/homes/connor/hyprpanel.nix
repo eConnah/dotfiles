@@ -31,8 +31,8 @@
       layouts = {
         "*" = {
           "left" = [ "dashboard" "workspaces" "windowtitle" ];
-	  "middle" = [ "media" ];
-	  "right" = [ "volume" "network" "custom/mac-battery" "clock" "bluetooth" "notifications" ];
+	  "middle" = [ "media" "clock" ];
+	  "right" = [ "network"  "bluetooth" "notifications" "volume" "custom/mac-battery" ];
         };
       };
       network = {
@@ -40,9 +40,8 @@
 	truncation = false;
       };
       launcher.autoDetectIcon = true;
-      bluetooth = {
-        label = false;
-      };
+      bluetooth.label = false;
+      clock.format = "%a %b %d  %H:%M:%S";
     };
     scalingPriority = "hyprland";
   };

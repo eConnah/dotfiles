@@ -28,6 +28,7 @@
     '';
     style.wallpapers = [ ];
   };
+
   boot.loader.efi.canTouchEfiVariables = false;
   boot.initrd.systemd.enable = true;
   boot.extraModprobeConfig = ''
@@ -71,6 +72,9 @@
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
+   
+  # Laptop power stuff
+  services.logind.lidSwitch = "suspend";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -96,8 +100,9 @@
 
   # Enable sound.
   services.pipewire = {
-  	enable = true;
-  	pulse.enable = true;
+    enable = true;
+    pulse.enable = true;
+    wireplumber.enable = true;
   };
   
   virtualisation = {
@@ -180,10 +185,16 @@
     distrobox
     wget
     kitty
+    matugen
     usbutils
     gh
     brightnessctl
     e2fsprogs
+    p7zip
+    easyeffects
+    pulseaudio
+    liblc3
+    pavucontrol
     (catppuccin-sddm.override {
       flavor = "mocha";
       accent = "mauve";

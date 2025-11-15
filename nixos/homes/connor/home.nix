@@ -23,10 +23,11 @@
     functions = {
       # simplifies nixos-rebuild
       nswitch = ''
-        argparse "u/upgrade" "t/trace" -- $argv
+        argparse "u/upgrade" "t/trace" "b/boot" -- $argv
         
 	set upgrade 0
 	set trace 0
+	set boot 0
 
 	if set -q _flag_upgrade
 	  set upgrade 1
@@ -34,8 +35,13 @@
 	if set -q _flag_trace
 	  set trace 1
 	end
-
-	if test $upgrade -eq 0 -a $trace -eq 0
+	if set -q _flag_boot
+	  set boot 1
+	end
+        
+	if test $boot -eq 1
+	  sudo nixos-rebuild boot -I nixos-config=/home/connor/Documents/dotfiles/nixos/configuration.nix
+	else if test $upgrade -eq 0 -a $trace -eq 0
 	  sudo nixos-rebuild switch -I nixos-config=/home/connor/Documents/dotfiles/nixos/configuration.nix
 	else if test $upgrade -eq 1 -a $trace -eq 0
 	  sudo nixos-rebuild switch -I nixos-config=/home/connor/Documents/dotfiles/nixos/configuration.nix --upgrade
@@ -44,6 +50,11 @@
 	else if test $upgrade -eq 1 -a $trace -eq 1
 	  sudo nixos-rebuild switch -I nixos-config=/home/connor/Documents/dotfiles/nixos/configuration.nix --upgrade --show-trace
 	end
+      '';
+
+      nclean = ''
+      sudo nix-env --delete-generations old
+      sudo nix-collect-garbage -d
       '';
 
       hyprbattery = ''

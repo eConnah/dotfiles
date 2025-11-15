@@ -40,11 +40,8 @@
     "zswap.compressor=lz4"
     "zswap.max_pool_percent=20"
     "zswap.shrinker_enabled=1"
-    "nowatchdog"
-    "resume_offset=2667167"
   ];
 
-  boot.resumeDevice = "/dev/nvme0n1p5";
   powerManagement.enable = true;
 
   swapDevices = [ { device = "/swap/swapfile"; } ];
@@ -75,7 +72,7 @@
   time.timeZone = "Europe/Amsterdam";
    
   # Laptop power stuff
-  services.logind.lidSwitch = "suspend";
+  services.logind.settings.Login.HandleLidSwitch = "suspend";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -197,6 +194,7 @@
     liblc3
     pavucontrol
     mpv
+    plex-mpv-shim
     (catppuccin-sddm.override {
       flavor = "mocha";
       accent = "mauve";

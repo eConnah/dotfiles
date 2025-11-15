@@ -59,6 +59,7 @@
   };
 
   # Allow macos system
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnsupportedSystem = true;
   nix.settings.auto-optimise-store = true;
   

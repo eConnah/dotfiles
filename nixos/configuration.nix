@@ -28,26 +28,28 @@
     '';
     style.wallpapers = [ ];
   };
+
   boot.loader.efi.canTouchEfiVariables = false;
   boot.initrd.systemd.enable = true;
   boot.extraModprobeConfig = ''
     options hid_apple iso_layout=0
   '';
 
-  boot.kernelParams = [
-   # "zswap.enabled=1"
-    #"zswap.compressor=lz4"
-  #  "zswap.max_pool_percent=20"
-   # "zswap.shrinker_enabled=1"
-    "nowatchdog"
-  ];
+  boot.kernelParams = [ "apple_dcp.show_notch=1" ];
 
-  #swapDevices = [{
-   # device = "/swap/swapfile";
-    #size = 10*1024;
-  #}];
+  powerManagement.enable = true;
+
+  fileSystems = {
+    "/".options = [ "compress=zstd" ];
+    "/home".options = [ "compress=zstd" ];
+    "/nix".options = [ "compress=zstd" "noatime" ];
+    "/swap".options = [ "noatime" ];
+    "/var/log".options = [ "compress=zstd" ];
+    "/var/cache".options = [ "noatime" ];
+  };
 
   # Allow macos system
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnsupportedSystem = true;
   nix.settings.auto-optimise-store = true;
   
@@ -55,12 +57,15 @@
   hardware.bluetooth.enable = true;
 
   networking.hostName = "escapepod3"; # Define your hostname.
-
+  
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/London";
+   
+  # Laptop power stuff
+  services.logind.settings.Login.HandleLidSwitch = "suspend";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -86,8 +91,9 @@
 
   # Enable sound.
   services.pipewire = {
-  	enable = true;
-  	pulse.enable = true;
+    enable = true;
+    pulse.enable = true;
+    wireplumber.enable = true;
   };
   
   virtualisation = {
@@ -131,7 +137,7 @@
     autoLogin.user = "leo";
   };
   
-  services.blueman.enable = true;
+  services.power-profiles-daemon.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.libinput.enable = true;
   services.flatpak.enable = true;
@@ -170,9 +176,18 @@
     distrobox
     wget
     kitty
+    matugen
     usbutils
     gh
     brightnessctl
+    e2fsprogs
+    p7zip
+    easyeffects
+    pulseaudio
+    liblc3
+    pavucontrol
+    mpv
+    plex-mpv-shim
     (catppuccin-sddm.override {
       flavor = "mocha";
       accent = "mauve";

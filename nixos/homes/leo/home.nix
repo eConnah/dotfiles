@@ -87,28 +87,29 @@
 
   listener {
     timeout = 150                                                # 2.5min.
-    on-timeout = fish -c (ifdischarging (brightnessctl -s set 10)) # set monitor backlight to minimum, avoid 0 on OLED monitor.
+    on-timeout = fish -c "ifdischarging 'brightnessctl -s set 10'" # set monitor backlight to minimum, avoid 0 on OLED monitor.
     on-resume = brightnessctl -r                                 # monitor backlight restore.
   }
 
   # turn off keyboard backlight, comment out this section if you dont have a keyboard backlight.
   listener { 
     timeout = 150                                                              # 2.5min.
-    on-timeout = fish -c (ifdischarging (brightnessctl -sd kbd_backlight set 0)) # turn off keyboard backlight.
+    on-timeout = fish -c "ifdischarging 'brightnessctl -sd kbd_backlight set 0'" # turn off keyboard backlight.
     on-resume = brightnessctl -rd kbd_backlight                                # turn on keyboard backlight.
   }
 
   listener {
     timeout = 330                                                  # 5.5min
-    on-timeout = fish -c (ifdischarging (hyprctl dispatch dpms off)) # screen off when timeout has passed
+    on-timeout = fish -c "ifdischarging 'hyprctl dispatch dpms off'" # screen off when timeout has passed
     on-resume = hyprctl dispatch dpms on && brightnessctl -r       # screen on when activity is detected after timeout has fired.
   }
 
   listener {
-    timeout = 1800                                         # 30min
-    on-timeout = fish -c (ifdischarging (systemctl suspend)) # suspend pc
+    timeout = 1800                                           # 30min
+    on-timeout = fish -c "ifdischarging 'systemctl suspend'" # suspend pc
   }
   '';
+
   home.file.".config/hyprpanel/modules.json".text = ''
   {
     "custom/mac-battery": {
@@ -144,6 +145,26 @@
       "interval": 10000
     }
   }'';
+  
+  home.file.".config/ncspot/config.toml".text = ''
+  [theme]
+  background = "#1e1e2e"
+  primary = "#cdd6f4"
+  secondary = "#94e2d5"
+  title = "#b4befe"
+  playing = "#a6e3a1"
+  playing_bg = "#1e1e2e"
+  highlight = "#cdd6f4"
+  highlight_bg = "#696e96"
+  playing_selected = "#a6e3a1"
+  error = "#1e1e2e"
+  error_bg = "#f38ba8"
+  statusbar = "#b4befe"
+  statusbar_bg = "#313244"
+  statusbar_progress = "#b4befe"
+  cmdline = "#b4befe"
+  cmdline_bg = "#181825"
+  '';
 
   home.stateVersion = "25.05";
 }

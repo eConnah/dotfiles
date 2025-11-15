@@ -19,7 +19,7 @@
       weather.location = "Eindhoven";
       weather.unit = "metric";
       time.military = true;
-    };
+   };
     bar.customModules = {
       storage.paths = [ "/" ];
       weather.unit = "metric";
@@ -31,8 +31,8 @@
       layouts = {
         "*" = {
           "left" = [ "dashboard" "workspaces" "windowtitle" ];
-	  "middle" = [ "media" ];
-	  "right" = [ "volume" "network" "bluetooth" "custom/mac-battery" "clock" "notifications" ];
+	  "middle" = [ "media" "clock" ];
+	  "right" = [ "network"  "bluetooth" "notifications" "volume" "custom/mac-battery" ];
         };
       };
       network = {
@@ -40,6 +40,8 @@
 	truncation = false;
       };
       launcher.autoDetectIcon = true;
+      bluetooth.label = false;
+      clock.format = "%a %b %d  %H:%M:%S";
     };
     scalingPriority = "hyprland";
   };

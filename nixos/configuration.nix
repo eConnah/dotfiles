@@ -195,6 +195,7 @@
     pulseaudio
     liblc3
     pavucontrol
+    mpv
     (catppuccin-sddm.override {
       flavor = "mocha";
       accent = "mauve";

@@ -35,20 +35,10 @@
     options hid_apple iso_layout=0
   '';
 
-  boot.kernelParams = [
-    "zswap.enabled=1"
-    "zswap.compressor=lz4"
-    "zswap.max_pool_percent=20"
-    "zswap.shrinker_enabled=1"
-    "nowatchdog"
-    "resume_offset=2667167"
-  ];
-
-  boot.resumeDevice = "/dev/nvme0n1p5";
   powerManagement.enable = true;
-
-  swapDevices = [ { device = "/swap/swapfile"; } ];
   
+  zramSwap.enable = true;
+
   fileSystems = {
     "/".options = [ "compress=zstd" ];
     "/home".options = [ "compress=zstd" ];
@@ -74,7 +64,7 @@
   time.timeZone = "Europe/Amsterdam";
    
   # Laptop power stuff
-  services.logind.lidSwitch = "suspend";
+  services.logind.settings.Login.HandleLidSwitch = "suspend";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";

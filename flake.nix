@@ -38,6 +38,27 @@
 	  { home-manager.extraSpecialArgs = specialArgs; }
         ];
       };
+      # leo-macbook
+      escapepod3 = nixpkgs.lib.nixosSystem rec {
+        system = "aarch64-linux";
+        specialArgs = {
+	  inherit inputs;
+	  vars = {
+	    user = "leo";
+	    host = "escapepod3";
+	    dir = "/home/leo/Documents/dotfiles";
+	  };
+	};
+
+        modules = [
+	  inputs.apple-silicon.nixosModules.default
+	  ./modules/nixos/asahi.nix
+	  ./modules/nixos/defaults.nix
+          home-manager.nixosModules.default
+	  { home-manager.extraSpecialArgs = specialArgs; }
+        ];
+      };
+
     };
   };
 }

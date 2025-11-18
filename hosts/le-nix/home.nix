@@ -22,6 +22,7 @@
     hy
     nerd-fonts.jetbrains-mono
     vscode
+    eduvpn-client
   ];
   
   programs.kitty.enable = true;

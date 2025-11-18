@@ -22,6 +22,8 @@
     hy
     nerd-fonts.jetbrains-mono
     vscode
+    hyprshot
+    hyprpicker
     eduvpn-client
   ];
   

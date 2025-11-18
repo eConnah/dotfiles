@@ -48,4 +48,6 @@
       '';
     };
   };
+  
+  home.file.".config/fish/themes/catppuccin-mocha.theme".source = ./theme-fish.theme;
 }

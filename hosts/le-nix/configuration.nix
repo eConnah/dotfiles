@@ -34,18 +34,11 @@
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     distrobox
-    wget
-    kitty
     matugen
-    usbutils
     gh
     brightnessctl
     e2fsprogs
-    p7zip
-    easyeffects
-    pulseaudio
     liblc3
-    pavucontrol
     mpv
     plex-mpv-shim
     (catppuccin-sddm.override {

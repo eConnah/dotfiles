@@ -1,6 +1,6 @@
 # Default options that everyone should use
 
-{ vars, ... }:
+{ vars, pkgs, ... }:
 
 {
   imports = [
@@ -41,4 +41,16 @@
   programs.gamemode.enable = true;
   programs.git.enable = true;
   programs.neovim.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    eza
+    pavucontrol
+    pulseaudio
+    easyeffects
+    liblc3
+    kitty
+    wget
+    p7zip
+    usbutils
+  ];
 }

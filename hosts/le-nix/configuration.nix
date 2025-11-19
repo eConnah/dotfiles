@@ -27,7 +27,6 @@
     "/var/cache".options = [ "noatime" ];
   };
   
-  services.gnome.gnome-keyring.enable = true;
   services.libinput.enable = true;
 
   # List packages installed in system profile.

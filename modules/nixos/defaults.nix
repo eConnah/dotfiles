@@ -22,6 +22,7 @@
 
   services.flatpak.enable = true;
   services.openssh.enable = true;
+  services.gnome.gnome-keyring.enable = true;
 
   services.displayManager = {
     autoLogin.enable = true;
@@ -35,7 +36,8 @@
     pulse.enable = true;
     wireplumber.enable = true;
   };
-
+  
+  programs.seahorse.enable = true;
   programs.firefox.enable = true;
   programs.fish.enable = true;
   programs.gamemode.enable = true;

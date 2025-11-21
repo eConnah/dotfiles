@@ -174,7 +174,7 @@
     ###################
     ### Variables ###
     ###################
-    
+
     # See https://wiki.hypr.land/Configuring/Keywords/
     $mod = SUPER
     $terminal = kitty
@@ -185,7 +185,6 @@
     ### KEYBINDINGS ###
     ###################
     
-    # Example binds, see https://wiki.hypr.land/Configuring/Binds/ for more
     bind = $mod, T, exec, uwsm app -- $terminal
     bind = $mod, Q, killactive,
     bind = $mod, M, exit,
@@ -259,7 +258,7 @@
     bindl = , XF86AudioPause, exec, playerctl play-pause
     bindl = , XF86AudioPlay, exec, playerctl play-pause
     bindl = , XF86AudioPrev, exec, playerctl previous
-    
+
     ##############################
     ### WINDOWS AND WORKSPACES ###
     ##############################
@@ -278,4 +277,5 @@
     
     windowrule = float,class:steam
     windowrule = tile,class:steam,title:Steam
+    windowrule = fullscreen, class:com.moonlight_stream.Moonlight
 ''

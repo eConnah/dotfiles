@@ -14,7 +14,6 @@
     # Autostart necessary processes (like notifications daemons, status bars, etc.)
     # Or execute your favorite apps at launch like this:
     
-    exec-once = uwsm app -- vicinae server
     exec-once = uwsm app -- waypaper --restore
     
     #############################

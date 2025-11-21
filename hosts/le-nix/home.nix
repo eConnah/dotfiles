@@ -1,10 +1,11 @@
-# Home Manger Setup For Connor
-{ config, pkgs, ... }:
+# Home Manger Setup For le-nix
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
     ../../modules/home-manager/defaults.nix
     ./hyprpanel.nix
+    inputs.vicinae.homeManagerModules.default
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -12,7 +13,6 @@
   home.packages = with pkgs; [
     atool
     httpie
-    vicinae
     vesktop
     ncspot
     waypaper
@@ -39,6 +39,11 @@
   };
 
   services.hypridle.enable = true;
+  #services.vicinae = {
+  #  enable = true;
+  #  autoStart = true;
+  #};
+
 
   home.file.".config/hypr/hypridle.conf".source = ../../modules/home-manager/hypridle.conf;
   home.file.".config/hyprpanel/modules.json".source = ../../modules/home-manager/hyprpanel.json;

@@ -25,6 +25,7 @@
     hyprshot
     hyprpicker
     libinput
+    moonlight-qt
     eduvpn-client
   ];
 

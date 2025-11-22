@@ -14,7 +14,7 @@
     atool
     httpie
     vesktop
-    ncspot
+    spotify-player
     waypaper
     hyprpaper
     hyprcursor
@@ -53,7 +53,7 @@
 
   home.file.".config/hypr/hypridle.conf".source = ../../modules/home-manager/hypridle.conf;
   home.file.".config/hyprpanel/modules.json".source = ../../modules/home-manager/hyprpanel.json;
-  home.file.".config/ncspot/config.toml".source = ../../modules/home-manager/ncspot.toml;
+  home.file.".config/spotify-player/theme.toml".source = ../../modules/home-manager/spotify-player.toml;
 
   home.stateVersion = "25.05";
 }

@@ -1,7 +1,7 @@
 {
   "custom/mac-battery": {
     "icon": {
-      "Full100": "󰁹",
+      "Full100": "󰚥",
       "Discharging100": "󰁹",
       "Discharging90": "󰂂",
       "Discharging80": "󰂁",

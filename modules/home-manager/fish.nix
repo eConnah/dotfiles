@@ -24,8 +24,9 @@
       '';
 
       nclean = ''
-        sudo nix-env --delete-generations old
+        nix-collect-garbage -d
         sudo nix-collect-garbage -d
+        sudo nix-env --delete-generations old
       '';
 
       hyprbattery = ''

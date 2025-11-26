@@ -68,5 +68,6 @@
     p7zip
     usbutils
     nixfmt-rfc-style
+    fastfetch
   ];
 }

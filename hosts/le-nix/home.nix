@@ -25,6 +25,7 @@
     libinput
     moonlight-qt
     eduvpn-client
+    texliveFull
   ];
 
   programs.kitty.enable = true;

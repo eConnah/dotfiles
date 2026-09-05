@@ -1,5 +1,5 @@
 {
   flake.nixosModules.label = {
-    system.nixos.label = "remove-broken-pkgs";
+    system.nixos.label = "complete-turtle";
   };
 }

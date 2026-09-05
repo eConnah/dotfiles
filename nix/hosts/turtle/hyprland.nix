@@ -15,7 +15,7 @@
             mode = "1920x1080@144",
             position = "0x0",
             scale = 1,
-            vrr = 2
+            vrr = 2,
         })
 
         hl.monitor({
@@ -26,23 +26,23 @@
         })
 
         hl.monitor({
-          output = "",
-          mode = "preferred",
-          position = "auto",
-          scale = "auto"
+            output = "",
+            mode = "preferred",
+            position = "auto",
+            scale = "auto",
         })
 
         hl.on("hyprland.start", function()
-          hl.exec_cmd("xrandr --output DP-1 --primary")
+            hl.exec_cmd("xrandr --output DP-1 --primary")
         end)
 
         hl.config({
-          input = {
-            accel_profile = "flat",
-            follow_mouse = 1,
-            kb_layout = "gb",
-            sensitivity = 0,
-          }
+            input = {
+                accel_profile = "flat",
+                follow_mouse = 1,
+                kb_layout = "gb",
+                sensitivity = 0.5,
+            },
         })
 
         menu = "vicinae toggle"

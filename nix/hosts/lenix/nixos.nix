@@ -42,7 +42,10 @@
         nh.flake = "/persistent/dotfiles";
       };
       security.nix-secrets = {
-        identityPaths = ["/persistent/nix-keys/age-identity.txt"];
+        identityPaths = [
+          "/persistent/nix-keys/age-identity.txt"
+          "/persistent/nix-keys/yubikey-age.txt"
+        ];
         storagePath = "/persistent/dotfiles/secrets";
       };
       systemd.tmpfiles.rules = [

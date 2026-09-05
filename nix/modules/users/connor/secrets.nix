@@ -6,22 +6,24 @@
           group = "connor";
           owner = "connor";
           recipients = [
-            "lenix"
             "ACE"
+            "cookie"
+            "lenix"
             "murtle"
             "onyx"
-            "cookie"
+            "turtle"
             "yubikey"
           ];
         };
         "connor/linux" = {
           neededForUsers = true;
           recipients = [
-            "lenix"
             "ACE"
+            "cookie"
+            "lenix"
             "murtle"
             "onyx"
-            "cookie"
+            "turtle"
             "yubikey"
           ];
         };

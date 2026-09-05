@@ -4,9 +4,6 @@
       imports = with self.hjemModules; [
         onyx-hyprland
       ];
-      environment.sessionVariables = {
-        PROTON_ENABLE_WAYLAND = "1";
-      };
       packages = with pkgs; [
         davinci-resolve
         heroic

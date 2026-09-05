@@ -19,7 +19,10 @@
     ];
     boot.zfs.forceImportRoot = lib.mkDefault false;
     environment = {
-      sessionVariables.MANPAGER = "bat -plman";
+      sessionVariables = {
+        MANPAGER = "bat -plman";
+        PROTON_ENABLE_WAYLAND = "1";
+      };
       systemPackages = with pkgs; [
         (mpv.override {youtubeSupport = false;})
         age-plugin-fido2-hmac
@@ -146,21 +149,22 @@
         enable = true;
         extraPackages = [pkgs.age-plugin-fido2-hmac];
         recipientAliases = {
-          ACE = "age1qa58lk685uwd9s8g3evvh9kyaf48rj0pggnsx6gc8nza4redx52qgrqyc0";
           all-hosts = [
-            "lenix"
-            "onyx"
             "ACE"
-            "murtle"
             "cookie"
+            "lenix"
+            "murtle"
+            "onyx"
+            "turtle"
             "yubikey"
           ];
+          ACE = "age1qa58lk685uwd9s8g3evvh9kyaf48rj0pggnsx6gc8nza4redx52qgrqyc0";
           cookie = "age17tdwsudlll0ykq4xlhpm758nlawnzt43kcefp6af3vkaczperahsqslydt";
           escapepod3 = "age1REPLACE_ME";
           lenix = "age1xpg656d826awgldew9svunr9r4r8rdmf8fz7zgjlgmpd809q5flsavsmkd";
           murtle = "age1eqm8wgfpc8aawaxardpypg5gcdluavplfy7gn2qp9tefwauezs2sd69wvl";
           onyx = "age1vx67nthmpprcv7mws3rvp6wtqe23td8rkxvexhvay0gvsqse0saqquv2fe";
-          turtle = "age1REPLACE_ME";
+          turtle = "age16wjhsc4uaf0jnucdx649v95ztjy8645smm33w7z47nlr8378r9tsmj5jnm";
           yubikey = "age10galsk69w2j2s45e00s2zla77ycrstgu9z7avhdrer2jzj3yj9xqp0np50";
         };
         secrets."nix-cache-key".recipients = [

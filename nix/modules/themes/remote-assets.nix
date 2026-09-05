@@ -50,6 +50,14 @@
           hash = "sha256-BGm9o2j1kjJkPtE0Q8WZJoWOfDn60j9WTNH+G/2x884=";
           url = "https://assets.econnah.uk/wallpapers/frieren-04.png";
         };
+        "jjk-01.png" = pkgs.fetchurl {
+          hash = "sha256-SxPfDv/FhIHo62gs/lpN7xDJ3ZwU8LhJXFtiRwCQRvg=";
+          url = "https://assets.econnah.uk/wallpapers/jjk-01.png";
+        };
+        "jjk-02.png" = pkgs.fetchurl {
+          hash = "sha256-eEDBo7HeCGi/MJtisBHF+MEIb8qDm9VQ3py0WgvirjU=";
+          url = "https://assets.econnah.uk/wallpapers/jjk-02.png";
+        };
         "mountains-01.jpg" = pkgs.fetchurl {
           hash = "sha256-HiLEDE5fifOxYTExMSuisExVdAf/c+iBc7/vXxsW4Gs=";
           url = "https://assets.econnah.uk/wallpapers/mountains-01.jpg";
@@ -57,6 +65,14 @@
         "point_break-01.png" = pkgs.fetchurl {
           hash = "sha256-lEazfPNeisETcoxowUoK6ixhYfUN0Ci3Fg1MszzUedU=";
           url = "https://assets.econnah.uk/wallpapers/point_break-01.png";
+        };
+        "tensura-01.png" = pkgs.fetchurl {
+          hash = "sha256-tGkqw7p6pdC8l6++xPwrHrz6wtYfS1e1u0R/5glto5w=";
+          url = "https://assets.econnah.uk/wallpapers/tensura-01.png";
+        };
+        "tensura-02.png" = pkgs.fetchurl {
+          hash = "sha256-MAmo4O9RmBI+Jj85tbSdpWAubaBawmIoSfZcjNVdgn0=";
+          url = "https://assets.econnah.uk/wallpapers/tensura-02.png";
         };
         "ultrakill-01.png" = pkgs.fetchurl {
           hash = "sha256-OtPvmv3X9pqj1JtFOWjwPqTbzK1kzCXXFI54zsxIyw8=";

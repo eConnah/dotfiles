@@ -1,15 +1,23 @@
 {self, ...}: {
   flake.nixosModules.turtle-hjem = {pkgs, ...}: {
     hjem.users = {
+      aude = {
+        imports = with self.hjemModules; [
+          turtle-hyprland
+        ];
+        packages = with pkgs; [
+          plezy
+          spotify
+        ];
+        theme.wallpaper = "your_name-01.png";
+      };
       connor = {
         imports = with self.hjemModules; [
           turtle-hyprland
         ];
-        environment.sessionVariables = {
-          PROTON_ENABLE_WAYLAND = "1";
-        };
         packages = with pkgs; [
           davinci-resolve
+          heroic
           plezy
           spotify
         ];
@@ -24,20 +32,42 @@
             ];
           };
         };
-        theme.wallpaper = "frieren-04.png";
+        theme.wallpaper = "tensura-02.png";
+        xdg.config.files."mpv/mpv.conf".text = ''
+          profile=high-quality
+          vo=gpu-next
+          gpu-api=vulkan
+          hwdec=nvdec-copy
+          video-sync=display-resample
+          interpolation=yes
+          tscale=oversample
+          deband-iterations=4
+          deband-threshold=48
+          deband-range=16
+          deband-grain=48
+          target-colorspace-hint=yes
+        '';
       };
       ewan = {
         imports = with self.hjemModules; [
           turtle-hyprland
         ];
-        environment.sessionVariables = {
-          PROTON_ENABLE_WAYLAND = "1";
-        };
         packages = with pkgs; [
           plezy
           spotify
         ];
-        theme.wallpaper = "mountains-01.jpg";
+        theme.wallpaper = "jjk-02.png";
+      };
+      kyla = {
+        imports = with self.hjemModules; [
+          turtle-hyprland
+        ];
+        packages = with pkgs; [
+          mixxx
+          plezy
+          spotify
+        ];
+        theme.wallpaper = "point_break-01.png";
       };
     };
   };

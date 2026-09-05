@@ -1,5 +1,5 @@
 {
   flake.nixosModules.label = {
-    system.nixos.label = "switch-to-core";
+    system.nixos.label = "remove-broken-pkgs";
   };
 }

@@ -85,7 +85,16 @@
         ];
       };
     };
-    fileSystems."/nix".neededForBoot = true;
-    fileSystems."/persistent".neededForBoot = true;
+    fileSystems = {
+      "/nix".neededForBoot = true;
+      "/persistent".neededForBoot = true;
+      "/var/lib/nixos" = {
+        device = "/persistent/var/lib/nixos";
+        fsType = "none";
+        options = ["bind"];
+        neededForBoot = true;
+        depends = ["/persistent"];
+      };
+    };
   };
 }

@@ -76,6 +76,13 @@
         neededForBoot = true;
       };
       "/persistent".neededForBoot = true;
+      "/var/lib/nixos" = {
+        device = "/persistent/var/lib/nixos";
+        fsType = "none";
+        options = ["bind"];
+        neededForBoot = true;
+        depends = ["/persistent"];
+      };
     };
   };
 }

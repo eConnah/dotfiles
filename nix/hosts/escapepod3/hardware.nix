@@ -55,6 +55,7 @@
         device = "/dev/disk/by-uuid/1c9f11c5-629f-4a7f-bc09-118258472a7b";
         fsType = "btrfs";
       };
+      environment.etc."machine-id".text = "d6477217bb8b46b5b5b8ea9e255390cf\n";
       nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
       swapDevices = [];
     };

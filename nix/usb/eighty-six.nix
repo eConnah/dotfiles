@@ -24,7 +24,7 @@
             };
             wireless.enable = false;
           };
-          preservation.enable = lib.mkForce false;
+          system.nixos-core.persistence.enable = lib.mkForce false;
           security.nix-secrets.enable = lib.mkForce false;
           security.sudo.wheelNeedsPassword = false;
           services.flatpak.enable = lib.mkForce false;

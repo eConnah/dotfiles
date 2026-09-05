@@ -73,7 +73,16 @@
       device = "/dev/disk/by-id/ata-ST1000LM035-1RK172_WDEFKAEW";
       type = "disk";
     };
-    fileSystems."/nix".neededForBoot = true;
-    fileSystems."/persistent".neededForBoot = true;
+    fileSystems = {
+      "/nix".neededForBoot = true;
+      "/persistent".neededForBoot = true;
+      "/var/lib/nixos" = {
+        device = "/persistent/var/lib/nixos";
+        fsType = "none";
+        options = ["bind"];
+        neededForBoot = true;
+        depends = ["/persistent"];
+      };
+    };
   };
 }

@@ -28,14 +28,12 @@
       };
     };
     powerManagement.enable = true;
-    preservation.preserveAt."/persistent" = {
-      directories = [
-        "/etc/iwd"
-        "/var/lib/bluetooth"
-        "/var/lib/dhcpcd/"
-        "/var/lib/iwd"
-      ];
-    };
+    system.nixos-core.persistence.stores."/persistent".directories = [
+      "/etc/iwd"
+      "/var/lib/bluetooth"
+      "/var/lib/dhcpcd/"
+      "/var/lib/iwd"
+    ];
     services.logind.settings.Login.HandleLidSwitch = lib.mkDefault "suspend-then-hibernate";
     services.power-profiles-daemon.enable = true;
   };

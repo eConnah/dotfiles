@@ -14,6 +14,7 @@
       onyx-disko
       onyx-hardware
       onyx-hjem
+      preservation
     ];
   };
 }

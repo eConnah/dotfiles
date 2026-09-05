@@ -12,10 +12,10 @@
       inputs.hjem.nixosModules.default
       inputs.lix-module.nixosModules.default
       inputs.nix-secrets.nixosModules.default
-      inputs.preservation.nixosModules.default
-      self.nixosModules.substituters
-      self.nixosModules.secret-assertions
+      inputs.nixos-core.nixosModules.default
       self.nixosModules.label
+      self.nixosModules.secret-assertions
+      self.nixosModules.substituters
     ];
     boot.zfs.forceImportRoot = lib.mkDefault false;
     environment = {
@@ -111,7 +111,10 @@
       ];
       use-xdg-base-directories = true;
     };
-    nixpkgs.config.allowUnfree = true;
+    nixpkgs = {
+      config.allowUnfree = true;
+      overlays = [inputs.nixos-core.overlays.default];
+    };
     programs = {
       bat.enable = true;
       dconf.enable = true;
@@ -189,7 +192,16 @@
         wireplumber.enable = true;
       };
     };
-    system.stateVersion = "25.11";
+    system = {
+      nixos-core = {
+        enable = true;
+        package = pkgs.nixos-core.override {
+          withInitScript = false;
+          withStage1 = false;
+        };
+      };
+      stateVersion = "25.11";
+    };
     virtualisation = {
       vmVariant = {
         boot.kernelParams = ["video=2560x1440@240"];

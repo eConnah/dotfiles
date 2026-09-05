@@ -16,6 +16,7 @@
       laptops
       limine
       mesa
+      preservation
     ];
   };
 }

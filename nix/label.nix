@@ -1,5 +1,5 @@
 {
   flake.nixosModules.label = {
-    system.nixos.label = "various-fixes";
+    system.nixos.label = "switch-to-core";
   };
 }

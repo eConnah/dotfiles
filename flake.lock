@@ -253,6 +253,27 @@
         "type": "github"
       }
     },
+    "nixos-core": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1788284352,
+        "narHash": "sha256-owP2IyxlqGlPtvLYkjZZaD9jFtPUQbfChoEEpja0PkE=",
+        "owner": "manic-systems",
+        "repo": "nixos-core",
+        "rev": "c149d5b9f21ad241fa9e78de943a7a0b96a826ab",
+        "type": "github"
+      },
+      "original": {
+        "owner": "manic-systems",
+        "ref": "notashelf/push-kzsvuxrxwpuq",
+        "repo": "nixos-core",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1788316716,
@@ -303,21 +324,6 @@
         "type": "github"
       }
     },
-    "preservation": {
-      "locked": {
-        "lastModified": 1757436102,
-        "narHash": "sha256-mMI9IanU+Xw+pVogD2oT0I2kTmvz2Un/Apc5+CwUpEY=",
-        "owner": "nix-community",
-        "repo": "preservation",
-        "rev": "93416f4614ad2dfed5b0dcf12f27e57d27a5ab11",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "preservation",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "apple-silicon": "apple-silicon",
@@ -329,9 +335,9 @@
         "lix": "lix",
         "lix-module": "lix-module",
         "nix-secrets": "nix-secrets",
+        "nixos-core": "nixos-core",
         "nixpkgs": "nixpkgs",
-        "nvf": "nvf",
-        "preservation": "preservation"
+        "nvf": "nvf"
       }
     },
     "systems": {

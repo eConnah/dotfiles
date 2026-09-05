@@ -34,12 +34,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:unnamed-systems/nix-secrets";
     };
+    nixos-core = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:manic-systems/nixos-core/notashelf/push-kzsvuxrxwpuq";
+    };
     nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
     nvf = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:notashelf/nvf";
     };
-    preservation.url = "github:nix-community/preservation";
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./nix);

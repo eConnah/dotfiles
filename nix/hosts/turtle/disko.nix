@@ -86,13 +86,20 @@
       };
     };
     fileSystems = {
+      "/persistent".neededForBoot = true;
       "/nix" = {
         options = ["bind"];
         device = "/persistent/nix";
         fsType = "none";
         neededForBoot = true;
       };
-      "/persistent".neededForBoot = true;
+      "/var/lib/nixos" = {
+        options = ["bind"];
+        device = "/persistent/var/lib/nixos";
+        fsType = "none";
+        neededForBoot = true;
+        depends = ["/persistent"];
+      };
     };
   };
 }

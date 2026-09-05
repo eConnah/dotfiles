@@ -6,30 +6,16 @@
   }: let
     normalUsers = lib.filterAttrs (_name: user: user.isNormalUser) config.users.users;
   in {
-    boot.tmp.cleanOnBoot = true;
     boot.tmp.useTmpfs = false;
-    preservation = {
+    system.nixos-core.persistence = {
       enable = true;
 
-      preserveAt."/persistent" = {
+      stores."/persistent" = {
         directories = [
-          "/etc/nixos"
-          "/etc/ssh"
           "/var/lib/flatpak"
           "/var/lib/sbctl"
           "/var/lib/tailscale"
           "/var/log"
-          {
-            directory = "/var/lib/nixos";
-            inInitrd = true;
-          }
-        ];
-
-        files = [
-          {
-            file = "/etc/machine-id";
-            inInitrd = true;
-          }
         ];
 
         users =

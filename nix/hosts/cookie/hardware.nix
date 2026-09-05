@@ -46,6 +46,7 @@
         "kvm-amd"
       ];
     };
+    environment.etc."machine-id".text = "eb776f59c84a4dc98cb16da737ff5b33\n";
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   };
 }

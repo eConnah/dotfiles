@@ -15,6 +15,7 @@
       turtle-disko
       turtle-hardware
       turtle-hjem
+      preservation
     ];
   };
 }

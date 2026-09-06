@@ -145,6 +145,7 @@
       };
     };
     security = {
+      loginDefs.settings.UMASK = "002";
       nix-secrets = {
         enable = true;
         extraPackages = [pkgs.age-plugin-fido2-hmac];
@@ -173,8 +174,16 @@
         storage = self + "/secrets";
       };
       pam.enableUMask = true;
-      loginDefs.settings.UMASK = "002";
       rtkit.enable = true;
+      run0 = {
+        enable = true;
+        sudo-shim.enable = true;
+        persistentAuth = {
+          enable = true;
+          enableRemote = true;
+        };
+      };
+      sudo.enable = false;
     };
     services = {
       flatpak.enable = lib.mkDefault true;

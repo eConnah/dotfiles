@@ -49,7 +49,6 @@
           normalUsers;
       };
     };
-    security.sudo.extraConfig = "Defaults lecture=never";
     systemd.suppressedSystemUnits = ["systemd-machine-id-commit.service"];
   };
 }

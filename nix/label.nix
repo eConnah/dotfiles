@@ -1,5 +1,5 @@
 {
   flake.nixosModules.label = {
-    system.nixos.label = "complete-turtle";
+    system.nixos.label = "sudo-to-run0";
   };
 }

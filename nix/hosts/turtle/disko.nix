@@ -80,9 +80,6 @@
                   };
                 };
                 type = "btrfs";
-                postMountHook = ''
-                  mkdir -p /mnt/persistent/var/lib/nixos
-                '';
               };
               name = "root";
               priority = 2;

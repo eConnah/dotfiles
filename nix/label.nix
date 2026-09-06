@@ -1,5 +1,5 @@
 {
   flake.nixosModules.label = {
-    system.nixos.label = "sudo-to-run0";
+    system.nixos.label = "preserve-ssh-keys";
   };
 }

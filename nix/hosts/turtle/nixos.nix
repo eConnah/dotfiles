@@ -55,7 +55,6 @@
         matchConfig.Name = "en*";
         linkConfig.WakeOnLan = "magic";
       };
-
       networks."10-ethernet" = {
         linkConfig = {
           RequiredForOnline = "routable";

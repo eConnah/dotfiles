@@ -7,6 +7,11 @@
     }: {
       boot = {
         kernelPackages = pkgs.linuxPackages_zen;
+        extraModulePackages = [config.boot.kernelPackages.r8125];
+        blacklistedKernelModules = ["r8169"];
+        extraModprobeConfig = ''
+          options r8125 disable_wol_support=0 s5wol=1 aspm=0
+        '';
         loader.limine = {
           extraEntries = ''
             /+Other
@@ -69,6 +74,10 @@
       services.resolved.enable = true;
       systemd.network = {
         enable = true;
+        links."10-ethernet" = {
+          matchConfig.Name = "en*";
+          linkConfig.WakeOnLan = "magic";
+        };
         networks."10-ethernet" = {
           linkConfig = {
             RequiredForOnline = "routable";

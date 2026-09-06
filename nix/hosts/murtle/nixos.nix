@@ -24,6 +24,10 @@
     };
     systemd.network = {
       enable = true;
+      links."10-ethernet" = {
+        matchConfig.Name = "en*";
+        linkConfig.WakeOnLan = "magic";
+      };
       networks."10-ethernet" = {
         linkConfig = {
           RequiredForOnline = "routable";

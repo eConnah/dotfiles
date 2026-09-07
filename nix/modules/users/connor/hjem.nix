@@ -119,14 +119,18 @@
           ui = {
             default-command = "log";
             diff-editor = ":builtin";
-            diff-formatter = [
-              "kitten"
-              "diff"
-              "$left"
-              "$right"
-            ];
             editor = "nvim";
             merge-editor = ":builtin";
+          };
+          merge-tools = {
+            kitty-diff = {
+              program = "kitten";
+              diff-args = [
+                "diff"
+                "$left"
+                "$right"
+              ];
+            };
           };
           user = {
             email = "git@econnah.uk";

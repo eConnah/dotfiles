@@ -37,6 +37,7 @@
         extraGroups = [
           "dialout"
           "input"
+          "la-famille"
           "uucp"
           "wheel"
         ];

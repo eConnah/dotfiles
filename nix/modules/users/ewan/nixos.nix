@@ -28,6 +28,7 @@
         description = "Ewan Alecks";
         extraGroups = [
           "dialout"
+          "la-famille"
           "uucp"
           "wheel"
           "ydotool"

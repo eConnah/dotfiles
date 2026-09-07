@@ -222,6 +222,7 @@
         virtualisation.memorySize = 10240;
       };
     };
+    users.groups."la-famille".gid = 2018;
     xdg.mime = {
       enable = true;
       defaultApplications = {

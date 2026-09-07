@@ -1,5 +1,5 @@
 {
   flake.nixosModules.label = {
-    system.nixos.label = "hyprland-and-jj";
+    system.nixos.label = "la-famille-group";
   };
 }

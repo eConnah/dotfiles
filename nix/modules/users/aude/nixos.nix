@@ -27,9 +27,10 @@
       users.aude = {
         description = "Aude Alecks";
         extraGroups = [
-          "wheel"
           "dialout"
+          "la-famille"
           "uucp"
+          "wheel"
         ];
         group = "aude";
         isNormalUser = true;

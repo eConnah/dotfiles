@@ -27,9 +27,10 @@
       users.kyla = {
         description = "Kyla Alecks";
         extraGroups = [
-          "wheel"
           "dialout"
+          "la-famille"
           "uucp"
+          "wheel"
         ];
         group = "kyla";
         isNormalUser = true;

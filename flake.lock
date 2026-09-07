@@ -77,11 +77,11 @@
         "nixpkgs-lib": "nixpkgs-lib"
       },
       "locked": {
-        "lastModified": 1788306937,
-        "narHash": "sha256-lbrI1UYVpFgKSsyrU9oeF7FHfnu8nLD9ja0ou9f2rxk=",
+        "lastModified": 1788450739,
+        "narHash": "sha256-glZLQlzIn1fXH6PazR2iUmTo7kzzyYSshrWhLS9TqCU=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "f16b25b8c3d2809b87925d0b76652d7821a75c68",
+        "rev": "31729ca8cbdb4fa927b34e5f4353e6a83f39e993",
         "type": "github"
       },
       "original": {
@@ -168,11 +168,11 @@
     },
     "import-tree": {
       "locked": {
-        "lastModified": 1788275959,
-        "narHash": "sha256-doeyg/EY8joBaZhELfVrSGjAm6pFtp2p0UgQv/Wwgh0=",
+        "lastModified": 1788467110,
+        "narHash": "sha256-ljEMTXP/rH0tOvDzc9gzwww6KcHRPRnEHzd9lK48V7s=",
         "owner": "denful",
         "repo": "import-tree",
-        "rev": "e9177dd0d600162a6410ea6019c796cff7a636c3",
+        "rev": "eb1b52eaecc57f7c136d07ae8a93e724dfecac46",
         "type": "github"
       },
       "original": {
@@ -184,11 +184,11 @@
     "lix": {
       "flake": false,
       "locked": {
-        "lastModified": 1788369962,
-        "narHash": "sha256-cwKqBB5rin7qGsbmHvXAgwnuG2+0WI1V+mAjcJaavWA=",
-        "rev": "f0093496f722507e00a83e3d62b614e01fde6659",
+        "lastModified": 1788903053,
+        "narHash": "sha256-rp0pEO8p4PjL40o+sM/YpDTY/nKQlzKpRGNftw9+3fA=",
+        "rev": "e4d74bad335b5754b55da57ac53a86dfb07e4a4d",
         "type": "tarball",
-        "url": "https://git.lix.systems/api/v1/repos/lix-project/lix/archive/f0093496f722507e00a83e3d62b614e01fde6659.tar.gz?rev=f0093496f722507e00a83e3d62b614e01fde6659"
+        "url": "https://git.lix.systems/api/v1/repos/lix-project/lix/archive/e4d74bad335b5754b55da57ac53a86dfb07e4a4d.tar.gz?rev=e4d74bad335b5754b55da57ac53a86dfb07e4a4d"
       },
       "original": {
         "type": "tarball",
@@ -240,11 +240,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787751896,
-        "narHash": "sha256-FWs/9R3IvJlnXv5z6htebWkQ2a43Vq0DruLSfTy3rlY=",
+        "lastModified": 1788356805,
+        "narHash": "sha256-rxClV4z02Ev/bk0/FpdT5h9Oq4/o16RA7e6LRl1/QtU=",
         "owner": "unnamed-systems",
         "repo": "nix-secrets",
-        "rev": "7ac84b79fd23c655d8adbf20d8a62f66aa243be9",
+        "rev": "151f264a22b595802647db8fac09a2dbd6cb202c",
         "type": "github"
       },
       "original": {
@@ -260,27 +260,26 @@
         ]
       },
       "locked": {
-        "lastModified": 1788284352,
-        "narHash": "sha256-owP2IyxlqGlPtvLYkjZZaD9jFtPUQbfChoEEpja0PkE=",
+        "lastModified": 1788893518,
+        "narHash": "sha256-40t3oc+lcI2BIyC/9LfzbbxbgO+jKbE/2zTeU5FQeJw=",
         "owner": "manic-systems",
         "repo": "nixos-core",
-        "rev": "c149d5b9f21ad241fa9e78de943a7a0b96a826ab",
+        "rev": "44b5510478e27563e6c0d4da773403121b76bc54",
         "type": "github"
       },
       "original": {
         "owner": "manic-systems",
-        "ref": "notashelf/push-kzsvuxrxwpuq",
         "repo": "nixos-core",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1788316716,
-        "narHash": "sha256-7VBL4mi5M72FJtZOQt7SbCGWpGbsuH1ga6Zeu8bjtWk=",
-        "rev": "3ed67ec0a4d3c7ab4ae1f04f8ee8df07bfa506a2",
+        "lastModified": 1788881743,
+        "narHash": "sha256-151taSq/21cxagiIu7hyMVl68+FbHfwBP4lh6TB6KOM=",
+        "rev": "d6524aaca2ff07876657ae2b323f24be4874944b",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1066106.3ed67ec0a4d3/nixexprs.tar.xz?lastModified=1788316716&rev=3ed67ec0a4d3c7ab4ae1f04f8ee8df07bfa506a2"
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1069856.d6524aaca2ff/nixexprs.tar.xz?lastModified=1788881743&rev=d6524aaca2ff07876657ae2b323f24be4874944b"
       },
       "original": {
         "type": "tarball",
@@ -311,11 +310,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788115442,
-        "narHash": "sha256-hpEx9BvlTtnONKZK/GAdVtQriW14x0ec+Ir5uafNPYY=",
+        "lastModified": 1788873411,
+        "narHash": "sha256-PEcPDc5QRRlzYYGQuGuh7OMMLZ1TC5hLHt3whFBRSS0=",
         "owner": "notashelf",
         "repo": "nvf",
-        "rev": "f33afa7a878cfac9bebab42d8eccc7680c389cd6",
+        "rev": "4771b6b78c203c090799ca6984d73c54e77228d6",
         "type": "github"
       },
       "original": {

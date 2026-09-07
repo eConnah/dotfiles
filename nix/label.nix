@@ -1,5 +1,5 @@
 {
   flake.nixosModules.label = {
-    system.nixos.label = "cd-not-zoxide";
+    system.nixos.label = "nix-flake-update";
   };
 }

@@ -139,9 +139,6 @@
       zoxide = {
         enable = true;
         enableFishIntegration = true;
-        flags = [
-          "--cmd cd"
-        ];
       };
     };
     security = {

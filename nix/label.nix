@@ -1,5 +1,5 @@
 {
   flake.nixosModules.label = {
-    system.nixos.label = "la-famille-group";
+    system.nixos.label = "cd-not-zoxide";
   };
 }

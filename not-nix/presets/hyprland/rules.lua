@@ -31,3 +31,10 @@ hl.layer_rule({
     ignore_alpha = 0,
     no_anim = true,
 })
+
+-- Fullscreen goes black otherwise
+hl.window_rule({
+    name = "plezy-solitary-workaround",
+    match = { class = "^(com.edde746.plezy)$" },
+    opacity = 0.999,
+})

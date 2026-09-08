@@ -58,6 +58,10 @@
           hash = "sha256-eEDBo7HeCGi/MJtisBHF+MEIb8qDm9VQ3py0WgvirjU=";
           url = "https://assets.econnah.uk/wallpapers/jjk-02.png";
         };
+        "jjk-03.png" = pkgs.fetchurl {
+          hash = "sha256-A5nAHyrB/2L9Mzl0OD1simJEckTBYA8i7pw4oMZbHWg=";
+          url = "https://assets.econnah.uk/wallpapers/jjk-03.png";
+        };
         "mountains-01.jpg" = pkgs.fetchurl {
           hash = "sha256-HiLEDE5fifOxYTExMSuisExVdAf/c+iBc7/vXxsW4Gs=";
           url = "https://assets.econnah.uk/wallpapers/mountains-01.jpg";

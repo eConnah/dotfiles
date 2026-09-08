@@ -56,7 +56,10 @@
           plezy
           spotify
         ];
-        theme.wallpaper = "jjk-02.png";
+        theme.wallpapers = {
+          "DP-1" = "jjk-02.png";
+          "HDMI-A-1" = "jjk-03.png";
+        };
       };
       kyla = {
         imports = with self.hjemModules; [

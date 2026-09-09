@@ -1,5 +1,5 @@
 {
   flake.nixosModules.label = {
-    system.nixos.label = "hyprland-plezy-fix";
+    system.nixos.label = "preservation-fix";
   };
 }

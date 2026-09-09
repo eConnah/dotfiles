@@ -18,11 +18,6 @@
           "/var/log"
         ];
 
-        files = [
-          "/etc/ssh/ssh_host_ed25519_key"
-          "/etc/ssh/ssh_host_ed25519_key.pub"
-        ];
-
         users =
           lib.mapAttrs (_name: _: {
             directories = [
@@ -54,7 +49,12 @@
           normalUsers;
       };
     };
-    services.openssh.generateHostKeys = false;
+    services.openssh.hostKeys = [
+      {
+        type = "ed25519";
+        path = "/persistent/etc/ssh/ssh_host_ed25519_key";
+      }
+    ];
     systemd.suppressedSystemUnits = ["systemd-machine-id-commit.service"];
   };
 }
